@@ -1,50 +1,86 @@
-# React + TypeScript + Vite
+# AI Chat Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **AI Chat Website** repository! This project is a lightweight, conversational AI web application that utilizes the Ollama API to provide engaging and intuitive chatbot functionality.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Interactive Chat Interface**: Communicate with an AI model through a user-friendly chat interface.
+- **AI-Powered Conversations**: Leverages the Ollama API to process and generate responses.
+- **Real-Time Responses**: Quick and seamless interactions for an enjoyable user experience.
+- **Modular Codebase**: Clean and scalable structure for easy customization and updates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Prerequisites
+Before running the project, ensure you have the following installed:
+- **Node.js** (v22 or higher)
+- **npm** or **yarn**
+- Ollama CLI (for pulling the AI model)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📂 Folder Structure
+```
+📦 root
+├── 📁 public              # Static assets for the front-end
+├── 📁 src                 # Source code for the web app
+│   ├── 📄 index.js        # Main server file
+│   ├── 📄 Message.tsx     # Chat message component
+│   └── 📄 App.js          # Main application logic
+├── 📄 package.json        # Project dependencies and scripts
+└── 📄 README.md           # Project documentation
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🛠️ Setup & Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YourUsername/ai-chat-website.git
+   cd ai-chat-website
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. Pull the required AI model:
+   ```bash
+   npx ollama pull llama3.2
+   ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## ⚙️ Configuration
+- Ensure the **Ollama API** is correctly configured in your environment.
+- Set up environment variables (if applicable) in a `.env` file:
+  ```
+  API_KEY=your_api_key
+  MODEL_NAME=llama3.2
+  ```
+
+## 🌐 Deployment
+### Local Deployment
+Run the server locally:
+```bash
+node index.js
 ```
+
+### Cloud Deployment
+1. Use a platform like Render or Vercel.
+2. Ensure `npm install` and `npx ollama pull llama3.2` are executed during the build phase.
+3. Set up your deployment commands to start the app (`npm start`).
+
+## 🤝 Contributing
+1. Fork this repository.
+2. Create a feature branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m "Add some feature"`.
+4. Push to the branch: `git push origin feature-name`.
+5. Open a pull request.
+
+## 🐛 Known Issues
+- `ollama pull` may fail during deployment due to missing dependencies or path errors. Ensure the Ollama CLI is installed globally or adjust the `postinstall` script.
+
+## 📜 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Happy coding! 😊 If you encounter any issues, feel free to open an [issue](https://github.com/YourUsername/ai-chat-website/issues).
