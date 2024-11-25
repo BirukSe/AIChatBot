@@ -10,7 +10,7 @@ const Message: React.FC<MessageProps> = ({ message }) => {
   useEffect(() => {
     const fetchAnswer = async () => {
       try {
-        const response = await fetch('http://localhost:8000/ask-query', {
+        const response = await fetch('https://aibackend-ollama.onrender.com/ask-query', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query: message }),
